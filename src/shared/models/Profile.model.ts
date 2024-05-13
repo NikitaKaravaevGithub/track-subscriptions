@@ -11,4 +11,5 @@ export interface ProfileModel {
   totalPayments: number;
   nearestPayment: string;
   subscriptions: Array<SubscriptionModel>;
+  icon: string;
 }

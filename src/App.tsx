@@ -1,6 +1,4 @@
-import { Provider } from "react-redux";
-
-import { store, useAppDispatch, useAppSelector } from "./store";
+import { useAppDispatch, useAppSelector } from "./store";
 
 import { SignIn } from "./pages/SignIn";
 import { useEffect, useState } from "react";
