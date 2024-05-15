@@ -2,14 +2,12 @@
   "name": "learn-to-write",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "cosmos": "cosmos",
-    "cosmos-export": "cosmos-export"
+    "ladle": "ladle serve"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
@@ -20,6 +18,7 @@
     "react-redux": "^9.1.1"
   },
   "devDependencies": {
+    "@ladle/react": "^4.0.3",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -30,8 +29,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^8.4.38",
-    "react-cosmos": "^6.1.1",
-    "react-cosmos-plugin-vite": "^6.1.1",
     "sass": "^1.72.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
