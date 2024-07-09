@@ -8,6 +8,8 @@ import { setProfileLoading, setProfile } from "./store/slices/profile";
 import { MOCK_PROFILE } from "../mocks/profile.mock";
 import { Preload } from "components/Preload";
 
+import "./index.css";
+
 export const App = memo(() => {
   const [path, setPath] = useState("Home");
 
@@ -24,7 +26,7 @@ export const App = memo(() => {
         dispatch(setProfile(MOCK_PROFILE));
 
         dispatch(setProfileLoading(false));
-      }, 2000);
+      }, 60000);
     }
   }, [dispatch, profile]);
 
