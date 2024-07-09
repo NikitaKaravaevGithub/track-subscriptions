@@ -1,4 +1,4 @@
-export interface PreloadProps {
+export interface PreloaderProps {
   isLoading?: boolean;
   children: JSX.Element;
 }

@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-import { PreloadProps } from "./Preload.model";
+import { PreloaderProps } from "./Preloader.model";
 
-export const Preload = memo(({ isLoading, children }: PreloadProps) => {
+export const Preloader = memo(({ isLoading, children }: PreloaderProps) => {
   return isLoading ? (
     <div className="flex justify-center h-screen align-middle items-center">
       Loading...

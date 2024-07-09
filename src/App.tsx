@@ -6,7 +6,7 @@ import { Counter } from "pages/Counter/Counter";
 import { setProfileLoading, setProfile } from "./store/slices/profile";
 
 import { MOCK_PROFILE } from "../mocks/profile.mock";
-import { Preload } from "components/Preload";
+import { Preloader } from "components/Preloader";
 
 import "./index.css";
 
@@ -31,7 +31,7 @@ export const App = memo(() => {
   }, [dispatch, profile]);
 
   return (
-    <Preload isLoading={isLoadingProfile}>
+    <Preloader isLoading={isLoadingProfile}>
       <div className="p-4">
         <div className="flex">
           <h4 onClick={() => setPath("Home")} className="mr-2">
@@ -45,6 +45,6 @@ export const App = memo(() => {
 
         {path === "Counter" && <Counter />}
       </div>
-    </Preload>
+    </Preloader>
   );
 });
