@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "types": ["node", "vite/client"]
   },
-  "include": ["vite.config.mts"]
+  "include": ["vite.config.*"]
 }

@@ -7,7 +7,7 @@ export const SignIn = memo(() => {
       <div className="flex flex-col">
         <InputControl name="login" className="mb-2" label="Логин" />
 
-        <InputControl name="password" />
+        <InputControl name="password" label="Пароль" />
       </div>
 
       <div>

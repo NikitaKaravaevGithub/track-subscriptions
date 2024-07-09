@@ -1,18 +1,21 @@
 import { useAppDispatch, useAppSelector } from "./store";
 
 import { SignIn } from "./pages/SignIn";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Counter } from "./pages/Counter/Counter";
 import { setProfileLoading, setProfile } from "./store/slices/profile";
 
 import { MOCK_PROFILE } from "../mocks/profile.mock";
+import { Preload } from "./components/Preload";
 
-function App() {
+export const App = memo(() => {
   const [path, setPath] = useState("Home");
 
   const dispatch = useAppDispatch();
 
   const profile = useAppSelector((state) => state.profile.profile);
+  const isLoadingProfile = useAppSelector((state) => state.profile.isLoading);
+  console.log("isLoadingProfile: ", isLoadingProfile);
 
   useEffect(() => {
     if (!profile) {
@@ -24,23 +27,23 @@ function App() {
         dispatch(setProfileLoading(false));
       }, 2000);
     }
-  }, []);
+  }, [dispatch, profile]);
 
   return (
-    <div className="p-4">
-      <div className="flex">
-        <h4 onClick={() => setPath("Home")} className="mr-2">
-          Home
-        </h4>
+    <Preload isLoading={isLoadingProfile}>
+      <div className="p-4">
+        <div className="flex">
+          <h4 onClick={() => setPath("Home")} className="mr-2">
+            Home
+          </h4>
 
-        <h4 onClick={() => setPath("Counter")}>Counter</h4>
+          <h4 onClick={() => setPath("Counter")}>Counter</h4>
+        </div>
+
+        {path === "Home" && <SignIn />}
+
+        {path === "Counter" && <Counter />}
       </div>
-
-      {path === "Home" && <SignIn />}
-
-      {path === "Counter" && <Counter />}
-    </div>
+    </Preload>
   );
-}
-
-export default App;
+});
