@@ -1,12 +1,12 @@
-import { useAppDispatch, useAppSelector } from "./store";
-
-import { SignIn } from "./pages/SignIn";
 import { memo, useEffect, useState } from "react";
-import { Counter } from "./pages/Counter/Counter";
+import { useAppDispatch, useAppSelector } from "store";
+
+import { SignIn } from "pages/SignIn";
+import { Counter } from "pages/Counter/Counter";
 import { setProfileLoading, setProfile } from "./store/slices/profile";
 
 import { MOCK_PROFILE } from "../mocks/profile.mock";
-import { Preload } from "./components/Preload";
+import { Preload } from "components/Preload";
 
 export const App = memo(() => {
   const [path, setPath] = useState("Home");
@@ -15,7 +15,6 @@ export const App = memo(() => {
 
   const profile = useAppSelector((state) => state.profile.profile);
   const isLoadingProfile = useAppSelector((state) => state.profile.isLoading);
-  console.log("isLoadingProfile: ", isLoadingProfile);
 
   useEffect(() => {
     if (!profile) {
