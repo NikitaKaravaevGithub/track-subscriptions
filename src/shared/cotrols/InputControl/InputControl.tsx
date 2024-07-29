@@ -10,7 +10,7 @@ export const InputControl: React.FC<InputControlProps> = memo(
       <div className={cn(className, "flex flex-col")}>
         <label htmlFor="">{label}</label>
 
-        <input className="bg-slate-100" {...props} />
+        <input {...props} className="bg-slate-100" />
       </div>
     );
   }
